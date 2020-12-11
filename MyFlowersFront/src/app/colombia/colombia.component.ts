@@ -14,7 +14,7 @@ export class ColombiaComponent implements OnInit {
   constructor(private bouqService: BouqService){ this.colombia = []; }
 
   ngOnInit() {
-      this.colombia = this.bouqService.getColombia();
+      this.colombia = this.bouqService.getBouq('colombia');
   }
 
   addItem(item){

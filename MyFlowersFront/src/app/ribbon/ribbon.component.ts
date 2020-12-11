@@ -14,7 +14,7 @@ export class RibbonComponent implements OnInit {
   constructor(private bouqService: BouqService){ this.ribbon = []; }
 
   ngOnInit() {
-      this.ribbon = this.bouqService.getRibbon();
+      this.ribbon = this.bouqService.getBouq('ribbon');
   }
 
   addItem(item){

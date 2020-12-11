@@ -14,6 +14,6 @@ export class BouquetsComponent implements OnInit {
   constructor(private bouqService: BouqService){ this.bouq = []; }
 
   ngOnInit() {
-      this.bouq = this.bouqService.getBouq();
+      this.bouq = this.bouqService.getBouq('bouquets');
   }
 }

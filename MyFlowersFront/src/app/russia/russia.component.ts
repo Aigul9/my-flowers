@@ -14,7 +14,7 @@ export class RussiaComponent implements OnInit {
   constructor(private bouqService: BouqService){ this.russia = []; }
 
   ngOnInit() {
-      this.russia = this.bouqService.getRussia();
+      this.russia = this.bouqService.getBouq('russia');
   }
 
   addItem(item){

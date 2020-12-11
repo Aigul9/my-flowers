@@ -14,7 +14,7 @@ export class HatBoxComponent implements OnInit {
   constructor(private bouqService: BouqService){ this.hatbox = []; }
 
   ngOnInit() {
-    this.hatbox = this.bouqService.getHatBox();
+    this.hatbox = this.bouqService.getBouq('hatbox');
   }
 
   addItem(item){

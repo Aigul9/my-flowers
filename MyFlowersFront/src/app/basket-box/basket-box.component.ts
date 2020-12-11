@@ -14,7 +14,7 @@ export class BasketBoxComponent implements OnInit {
   constructor(private bouqService: BouqService){ this.basketbox = []; }
 
   ngOnInit() {
-      this.basketbox = this.bouqService.getBasketBox();
+      this.basketbox = this.bouqService.getBouq('basketbox');
   }
 
   addItem(item){

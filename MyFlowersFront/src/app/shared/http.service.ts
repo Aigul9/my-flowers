@@ -33,79 +33,20 @@ export class HttpService {
     }
     sendOrder(basket, random) {
         console.log("ordering..." + random + " " + basket.kolvo);
-        return this.http.get('http://localhost/MyFlowers/doorder.php?id_order=' + random + '&id_bq=' + basket.id_bq + "&kolvo=" + basket.kolvo).subscribe(
-            value => {console.log("order was sent")},
+        return this.http.get(`http://localhost/MyFlowers/doorder.php?id_order=${random}&id_bq=${basket.id_bq}&kolvo=${basket.kolvo}`).subscribe(
+            value => {console.log("order was sent " + date)},
             error => {
                 console.log("order error");
             });
     }
-    getBouq() {
-        return this.http.get('http://localhost/MyFlowers/bouquets.php').pipe(
-            map(resp => resp),
-            catchError((error: any) => throwError(error)));
-    }
-	getClassic() {
-        return this.http.get('http://localhost/MyFlowers/classic.php').pipe(
-            map(resp => resp),
-            catchError((error: any) => throwError(error)));
-    }
-	getRibbon() {
-        return this.http.get('http://localhost/MyFlowers/ribbon.php').pipe(
-            map(resp => resp),
-            catchError((error: any) => throwError(error)));
-    }
-	getHatBox() {
-        return this.http.get('http://localhost/MyFlowers/hatbox.php').pipe(
-            map(resp => resp),
-            catchError((error: any) => throwError(error)));
-    }
-	getBasketBox() {
-        return this.http.get('http://localhost/MyFlowers/basketbox.php').pipe(
-            map(resp => resp),
-            catchError((error: any) => throwError(error)));
-    }
-    getGlass() {
-        return this.http.get('http://localhost/MyFlowers/glass.php').pipe(
-            map(resp => resp),
-            catchError((error: any) => throwError(error)));
-    }
-    getBox() {
-        return this.http.get('http://localhost/MyFlowers/box.php').pipe(
-            map(resp => resp),
-            catchError((error: any) => throwError(error)));
-    }
-    getOriginal() {
-        return this.http.get('http://localhost/MyFlowers/original.php').pipe(
-            map(resp => resp),
-            catchError((error: any) => throwError(error)));
-    }
 	getBasket() {
-        return this.http.get('http://localhost/MyFlowers/basket.php').pipe(
-            map(resp => resp),
-            catchError((error: any) => throwError(error)));
-    }
-    getEcuador() {
-        return this.http.get('http://localhost/MyFlowers/ecuador.php').pipe(
-            map(resp => resp),
-            catchError((error: any) => throwError(error)));
-    }
-    getKenya() {
-        return this.http.get('http://localhost/MyFlowers/kenya.php').pipe(
-            map(resp => resp),
-            catchError((error: any) => throwError(error)));
-    }
-    getColombia() {
-        return this.http.get('http://localhost/MyFlowers/colombia.php').pipe(
-            map(resp => resp),
-            catchError((error: any) => throwError(error)));
-    }
-    getRussia() {
-        return this.http.get('http://localhost/MyFlowers/russia.php').pipe(
-            map(resp => resp),
-            catchError((error: any) => throwError(error)));
+        return this.get('basket');
     }
     getOrder() {
-        return this.http.get('http://localhost/MyFlowers/orders.php').pipe(
+        return this.get('orders');
+    }
+    get(name) {
+        return this.http.get('http://localhost/MyFlowers/' + name + '.php').pipe(
             map(resp => resp),
             catchError((error: any) => throwError(error)));
     }

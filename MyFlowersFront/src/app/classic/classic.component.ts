@@ -10,13 +10,13 @@ import { BouqService } from '../shared/bouq.service';
 export class ClassicComponent implements OnInit {
 
   classic: Bouquets[];
-  count: number;
+  // count: number;
 
   constructor(private bouqService: BouqService){ this.classic = [];}
 
   ngOnInit() {
-      this.classic = this.bouqService.getClassic();
-      this.count = this.classic.length;
+      this.classic = this.bouqService.getBouq('classic');
+      // this.count = this.classic.length;
   }
 
   addItem(item){

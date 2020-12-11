@@ -14,7 +14,7 @@ export class OriginalComponent implements OnInit {
   constructor(private bouqService: BouqService){ this.original = []; }
 
   ngOnInit() {
-      this.original = this.bouqService.getOriginal();
+      this.original = this.bouqService.getBouq('original');
   }
 
   addItem(item){

@@ -7,34 +7,12 @@ import { HttpService } from './http.service';
 @Injectable()
 export class BouqService {
     bouq: Bouquets [];
-	classic: Bouquets[];
-    ribbon: Bouquets[];
-	hatbox: Bouquets[];
-	basketbox: Bouquets[];
-	glass: Bouquets[];
-    box: Bouquets[];
-    original: Bouquets[];
     basket: Basket[];
-    ecuador: Bouquets[];
-    kenya: Bouquets[];
-    colombia: Bouquets[];
-    russia: Bouquets[];
     order: Order[];
 
     constructor(private httpService: HttpService) {
         this.bouq = [];
         this.basket = [];
-        this.classic = [];
-        this.ribbon = [];
-        this.hatbox = [];
-        this.basketbox = [];
-        this.glass = [];
-        this.box = [];
-        this.original = [];
-        this.ecuador = [];
-        this.kenya = [];
-        this.colombia = [];
-        this.russia = [];
         this.order = [];
     }
     sum() {
@@ -114,8 +92,8 @@ export class BouqService {
         alert("Заказ оформлен! Номер заказа: " + random);
         this.onClear();
     }
-    getBouq = (): Bouquets[] => {
-        this.httpService.getBouq()
+    getBouq = (name): Bouquets[] => {
+        this.httpService.get(name)
             .subscribe((resp: Response) => {
                 for (const index in resp) {
                     const bouq1: Bouquets = new Bouquets(resp[index].id_bq, resp[index].name_bq, resp[index].price_bq, resp[index].comp_bq, resp[index].image_bq, resp[index].name_type, resp[index].country_sup);
@@ -141,116 +119,6 @@ export class BouqService {
                 }}
             );
         return this.basket;
-    }
-	getClassic = (): Bouquets[] => {
-        this.httpService.getClassic()
-            .subscribe((resp: Response) => {
-                for (const index in resp) {
-                    const classic1: Bouquets = new Bouquets(resp[index].id_bq, resp[index].name_bq, resp[index].price_bq, resp[index].comp_bq, resp[index].image_bq, resp[index].name_type, resp[index].country_sup);
-                    this.classic.push(classic1);
-                }
-            });
-        return this.classic;
-    }
-	getRibbon = (): Bouquets[] => {
-        this.httpService.getRibbon()
-            .subscribe((resp: Response) => {
-                for (const index in resp) {
-                    const ribbon1: Bouquets = new Bouquets(resp[index].id_bq, resp[index].name_bq, resp[index].price_bq, resp[index].comp_bq, resp[index].image_bq, resp[index].name_type, resp[index].country_sup);
-                    this.ribbon.push(ribbon1);
-                }
-            });
-        return this.ribbon;
-    }
-	getHatBox = (): Bouquets[] => {
-        this.httpService.getHatBox()
-            .subscribe((resp: Response) => {
-                for (const index in resp) {
-                    const hatbox1: Bouquets = new Bouquets(resp[index].id_bq, resp[index].name_bq, resp[index].price_bq, resp[index].comp_bq, resp[index].image_bq, resp[index].name_type, resp[index].country_sup);
-                    this.hatbox.push(hatbox1);
-                }
-            });
-        return this.hatbox;
-    }
-	getBasketBox = (): Bouquets[] => {
-        this.httpService.getBasketBox()
-            .subscribe((resp: Response) => {
-                for (const index in resp) {
-                    const basketbox1: Bouquets = new Bouquets(resp[index].id_bq, resp[index].name_bq, resp[index].price_bq, resp[index].comp_bq, resp[index].image_bq, resp[index].name_type, resp[index].country_sup);
-                    this.basketbox.push(basketbox1);
-                }
-            });
-        return this.basketbox;
-    }
-	getGlass = (): Bouquets[] => {
-        this.httpService.getGlass()
-            .subscribe((resp: Response) => {
-                for (const index in resp) {
-                    const glass1: Bouquets = new Bouquets(resp[index].id_bq, resp[index].name_bq, resp[index].price_bq, resp[index].comp_bq, resp[index].image_bq, resp[index].name_type, resp[index].country_sup);
-                    this.glass.push(glass1);
-                }
-            });
-        return this.glass;
-    }
-	getBox = (): Bouquets[] => {
-        this.httpService.getBox()
-            .subscribe((resp: Response) => {
-                for (const index in resp) {
-                    const box1: Bouquets = new Bouquets(resp[index].id_bq, resp[index].name_bq, resp[index].price_bq, resp[index].comp_bq, resp[index].image_bq, resp[index].name_type, resp[index].country_sup);
-                    this.box.push(box1);
-                }
-            });
-        return this.box;
-    }
-    getOriginal = (): Bouquets[] => {
-        this.httpService.getOriginal()
-            .subscribe((resp: Response) => {
-                for (const index in resp) {
-                    const original1: Bouquets = new Bouquets(resp[index].id_bq, resp[index].name_bq, resp[index].price_bq, resp[index].comp_bq, resp[index].image_bq, resp[index].name_type, resp[index].country_sup);
-                    this.original.push(original1);
-                }
-            });
-        return this.original;
-    }
-    getEcuador = (): Bouquets[] => {
-        this.httpService.getEcuador()
-            .subscribe((resp: Response) => {
-                for (const index in resp) {
-                    const ecuador1: Bouquets = new Bouquets(resp[index].id_bq, resp[index].name_bq, resp[index].price_bq, resp[index].comp_bq, resp[index].image_bq, resp[index].name_type, resp[index].country_sup);
-                    this.ecuador.push(ecuador1);
-                }
-            });
-        return this.ecuador;
-    }
-    getKenya = (): Bouquets[] => {
-        this.httpService.getKenya()
-            .subscribe((resp: Response) => {
-                for (const index in resp) {
-                    const kenya1: Bouquets = new Bouquets(resp[index].id_bq, resp[index].name_bq, resp[index].price_bq, resp[index].comp_bq, resp[index].image_bq, resp[index].name_type, resp[index].country_sup);
-                    this.kenya.push(kenya1);
-                }
-            });
-        return this.kenya;
-    }
-    getColombia = (): Bouquets[] => {
-        this.httpService.getColombia()
-            .subscribe((resp: Response) => {
-                for (const index in resp) {
-                    const colombia1: Bouquets = new Bouquets(resp[index].id_bq, resp[index].name_bq, resp[index].price_bq, resp[index].comp_bq, resp[index].image_bq, resp[index].name_type, resp[index].country_sup);
-                    this.colombia.push(colombia1);
-                }
-            });
-        return this.colombia;
-    }
-    getRussia = (): Bouquets[] => {
-        this.httpService.getRussia()
-            .subscribe((resp: Response) => {
-                for (const index in resp) {
-                    const russia1: Bouquets = new Bouquets(resp[index].id_bq, resp[index].name_bq, resp[index].price_bq, resp[index].comp_bq, resp[index].image_bq, resp[index].name_type, resp[index].country_sup);
-                    this.russia.push(russia1);
-                }
-            });
-        return this.russia;
     }
     getOrder = (): Order[] => {
         this.httpService.getOrder()

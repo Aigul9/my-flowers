@@ -14,7 +14,7 @@ export class BoxComponent implements OnInit {
   constructor(private bouqService: BouqService){ this.box = []; }
 
   ngOnInit() {
-      this.box = this.bouqService.getBox();
+      this.box = this.bouqService.getBouq('box');
   }
 
   addItem(item){

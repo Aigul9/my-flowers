@@ -14,7 +14,7 @@ export class AllComponent implements OnInit {
   constructor(private bouqService: BouqService){ this.all = []; }
 
   ngOnInit() {
-      this.all = this.bouqService.getBouq();
+      this.all = this.bouqService.getBouq('bouquets');
   }
 
   addItem(item){

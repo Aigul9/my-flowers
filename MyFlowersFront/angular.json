@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "MyFlowersFront": {
+    "angApp": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/MyFlowersFront",
+            "outputPath": "dist/angApp",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -63,18 +63,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "MyFlowersFront:build"
+            "browserTarget": "angApp:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "MyFlowersFront:build:production"
+              "browserTarget": "angApp:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "MyFlowersFront:build"
+            "browserTarget": "angApp:build"
           }
         },
         "test": {
@@ -111,15 +111,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "MyFlowersFront:serve"
+            "devServerTarget": "angApp:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "MyFlowersFront:serve:production"
+              "devServerTarget": "angApp:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "MyFlowersFront"
+  "defaultProject": "angApp"
 }

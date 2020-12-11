@@ -14,7 +14,7 @@ export class KenyaComponent implements OnInit {
   constructor(private bouqService: BouqService){ this.kenya = []; }
 
   ngOnInit() {
-      this.kenya = this.bouqService.getKenya();
+      this.kenya = this.bouqService.getBouq('kenya');
   }
 
   addItem(item){

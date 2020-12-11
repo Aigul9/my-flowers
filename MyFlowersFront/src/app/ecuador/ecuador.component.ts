@@ -14,7 +14,7 @@ export class EcuadorComponent implements OnInit {
   constructor(private bouqService: BouqService){ this.ecuador = []; }
 
   ngOnInit() {
-      this.ecuador = this.bouqService.getEcuador();
+      this.ecuador = this.bouqService.getBouq('ecuador');
   }
 
   addItem(item){

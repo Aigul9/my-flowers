@@ -14,7 +14,7 @@ export class GlassComponent implements OnInit {
   constructor(private bouqService: BouqService){ this.glass = []; }
 
   ngOnInit() {
-      this.glass = this.bouqService.getGlass();
+      this.glass = this.bouqService.getBouq('glass');
   }
 
   addItem(item){
