@@ -1,0 +1,23 @@
+<!-- <table>
+    <tr>
+        <td>
+            <input type="text" name="Email"  [(ngModel)]="Email" required placeholder="Почта"/>
+            <input type="text" name="Password" [(ngModel)]="Password" required placeholder="Пароль"/>
+            <button type="submit"  class="btn btn-default">Вход</button>
+        </td>
+        <td><h2><font color="blue"><a routerLink="/">Цветочный бутик</a></font></h2></td>
+    </tr>
+    <tr>
+        <td width="25%"><a routerLink="/types">Типы</a></td>
+        <td width="25%"><a routerLink="/countries">Страны</a></td>
+        <td width="25%"><a routerLink="/basket">Корзина</a></td>
+        <td width="25%"><a routerLink="/order">Заказы</a></td>
+    </tr>
+</table> -->
+<div class="image">
+    <app-header></app-header>
+    <table width="100%" style="position:absolute; top:75px; left: 0; background: rgb(216, 191, 216, 0.4); height:100%">
+    <router-outlet></router-outlet>
+    </table>
+    <app-footer></app-footer>
+</div>

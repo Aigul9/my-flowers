@@ -1,0 +1,24 @@
+<table border="1" width="100%" style="background: rgb(216, 191, 216, 0.4); border-collapse: collapse;">
+    <thead>
+        <th align="center"  height="40px">
+            <i>Номер заказа</i>
+        </th>
+        <th align="center">
+            <i>Название</i>
+        </th>
+        <th align="center" width="15%">
+            <i>Количество</i>
+        </th>
+    </thead>
+    <tr *ngFor="let c of order; let i = index">
+        <td align="center"  height="30px">
+            {{c.id_order}}
+        </td>
+        <td align="center">
+            {{c.name_bq}}
+        </td>
+        <td align="center">
+            {{c.kolvo}}
+        </td>
+    </tr>
+</table>

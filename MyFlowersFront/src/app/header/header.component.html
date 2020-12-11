@@ -1,0 +1,37 @@
+<!-- <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+    <head>
+        <title>Цветочный бутик</title>
+        <script>
+			function prov()
+			{
+				if (document.send.kto.value=='')
+				{
+					alert ("Не заполнено имя!"); return false;
+				}
+				if (document.send.mes.value=='')
+				{
+					alert ("Не заполнено сообщение!"); return false;
+				}
+				document.send.submit()
+			}
+		</script>
+    </head> -->
+    <!-- <body background="images1/pions.jpg" style="background-size:100%; background-repeat:repeat-y; " bgproperties="fixed"> -->
+        <table width="100%" height="80" bgcolor="#4C154C" style="position:absolute;top:0;left:0;">
+            <tr>
+				<td></td><td></td>
+				<td align="left"><font color="#FFF5EE"><b>Цветочный бутик</b></font></td>
+				<td></td><td></td>
+				<td align="right">
+					<a href="/"><font size="-1" color="#FFF5EE"><b>Личный кабинет</b></font></a>
+				</td>
+			</tr>
+			<tr>
+				<td align="center" width="20%"><a routerLink="/all"><font color="#FFF5EE"><b>Все букеты</b></font></a></td>
+                <td align="center" width="20%"><a routerLink="/types"><font color="#FFF5EE"><b>Типы</b></font></a></td>
+                <td align="center" width="20%"><a routerLink="/countries"><font color="#FFF5EE"><b>Страны</b></font></a></td>
+                <td align="center" width="20%"><a routerLink="/basket"><font color="#FFF5EE"><b>Корзина</b></font></a></td>
+                <td align="center" width="20%"><a routerLink="/order"><font color="#FFF5EE"><b>Заказы</b></font></a></td>
+            </tr>
+		</table>

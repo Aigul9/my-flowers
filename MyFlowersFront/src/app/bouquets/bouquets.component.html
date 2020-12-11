@@ -1,0 +1,11 @@
+<tr *ngFor="let c of bouq; let i = index">
+    <img height="200" width="200" src="assets/{{c.image_bq}}">
+    <td>
+        <table>
+            <tr><td>{{c.name_bq}}</td></tr>
+            <tr><td>{{c.price_bq}}</td></tr>
+            <tr><td>{{c.comp_bq}}</td></tr>
+            <td><a routerLink="/basket">Положить в корзину</a></td>
+        </table>
+    </td>
+</tr>

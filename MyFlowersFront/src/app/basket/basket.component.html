@@ -1,0 +1,43 @@
+<table border="1" width="100%" style="background: rgb(216, 191, 216, 0.7); border-spacing: 10px; border-collapse: collapse;">
+  <thead>
+    <td width="20%"  align="center">
+      <p>Название</p>
+    </td>
+    <td align="center">
+      <p>Описание</p>
+    </td>
+    <td width="10%" align="center">
+      <p>Цена</p>
+    </td>
+    <td width="10%" align="center" colspan="3">
+      <p>Количество</p>
+    </td>
+    <td width="10%" align="center">
+      <p>Сумма</p>
+    </td>
+    <td  width="5%" align="center">
+      <p>Удалить</p>
+    </td>
+  </thead>
+  <tr  *ngFor="let b of basket; let i = index">
+    <td>{{b.name_bq}}</td>
+    <td>{{b.comp_bq}}</td>
+    <td align="right">{{b.price_bq}}</td>
+      <td align="center"><button (click)="OnIncrease(b)"><img src="assets/plus.png" width="25"/></button></td>
+      <td align="center" width="3%">{{b.kolvo}}</td>
+      <td align="center"><button (click)="OnDecrease(b)"><img src="assets/minus.png" width="25"/></button></td>
+    <td align="center">{{b.sum}}</td>
+    <td align="center"><button (click)="deleteItem(b)"><img src="assets/delete.png" width="30"/></button></td>
+  </tr>
+  <tr>
+    <td align="right"></td>
+    <td align="right">
+      <i>Итого: </i>
+    </td>
+    <td align="right"><i>{{sum()}}
+    </i></td>
+    <td></td><td></td><td></td><td></td><td></td>
+  </tr>
+  <tr><td colspan="6" align="center"><input type="button" value="Оформить заказ" (click)="onOrder()" style="background-color: rgb(201, 173, 201);"></td>
+  <td colspan="2" align="right"><input type="button" value="Очистить корзину" (click)="onClear()" style="background-color: rgb(201, 173, 201);"></td></tr>
+</table>

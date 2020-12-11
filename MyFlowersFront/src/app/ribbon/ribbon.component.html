@@ -1,0 +1,52 @@
+<table border="1" align="right" style="background: rgb(216, 191, 216, 0.4)">
+    <tr *ngFor="let c of ribbon; let i = index">
+        <td align="center" width="20%" style="padding: 5px">
+            <img height="200" width="200" src="assets/{{c.image_bq}}">
+            <a routerLink="/basket"><input type="button" value="Положить в корзину" (click)="addItem(c)"></a>
+        </td>
+        <td>
+            <table>
+                <tr>
+                    <td align="right">
+                        <i>Название:</i>
+                    </td>
+                    <td>
+                        {{c.name_bq}}
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">
+                        <i>Страна происхождения:</i>
+                    </td>
+                    <td>
+                        {{c.country_sup}}
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">
+                        <i>Описание:</i>
+                    </td>
+                    <td>
+                        {{c.comp_bq}}
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">
+                        <i>Тип упаковки:</i>
+                    </td>
+                    <td>
+                        {{c.name_type}}
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">
+                        <i>Цена:</i>
+                    </td>
+                    <td>
+                        {{c.price_bq}}
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
